@@ -1,0 +1,225 @@
+@import url('style.css');
+
+.header__menu_selected {
+    border-bottom: 2px solid var(--dark-text);
+    padding-bottom: 4px;
+}
+
+.catalog {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 60px 0 100px;
+}
+
+.catalog__heading {
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--dark-text);
+    font-size: 60px;
+    line-height: 1.05;
+    text-align: center;
+}
+
+.catalog__heading span {
+    color: var(--printed-text);
+    font-style: italic;
+}
+
+.catalog,
+.catalog__heading,
+.catalog__tabs,
+.catalog__tab,
+.catalog-card,
+.catalog__load-more {
+    transition: var(--theme-transition), transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dark-theme .catalog-card {
+    border-color: rgba(225, 212, 201, 0.2);
+    background: #665f55;
+}
+
+.dark-theme .catalog__tab:not(.catalog__tab_active) {
+    border-color: #c1b6ad;
+}
+
+.dark-theme .catalog__load-more {
+    border-color: var(--cream-text);
+    color: var(--cream-text);
+}
+
+.catalog__tabs {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin: 40px 0;
+}
+
+.catalog__tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 46px;
+    padding: 8px 16px 8px 8px;
+    border: 1px solid transparent;
+    border-radius: 100px;
+    background: transparent;
+    color: var(--dark-text);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.catalog__tab-icon {
+    display: grid;
+    width: 30px;
+    height: 30px;
+    place-items: center;
+    border-radius: 50%;
+    background: #c1b6ad;
+    font-size: 16px;
+}
+
+.catalog__tab:hover,
+.catalog__tab_active {
+    border-color: #665f55;
+    background: #665f55;
+    color: var(--cream-text);
+}
+
+.catalog__tab:not(.catalog__tab_active) {
+    border-color: #c1b6ad;
+}
+
+.catalog__tab_active .catalog__tab-icon {
+    background: #e1d4c9;
+}
+
+.catalog__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.catalog-card {
+    min-height: 506px;
+    overflow: hidden;
+    border: 1px solid rgba(64, 63, 61, 0.2);
+    border-radius: 40px;
+    background: var(--light-background);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.catalog-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-soft);
+}
+
+.catalog-card__image {
+    height: 310px;
+    overflow: hidden;
+    border-radius: 40px;
+}
+
+.catalog-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.catalog-card:hover .catalog-card__image img {
+    transform: scale(1.04);
+}
+
+.catalog-card__content {
+    display: flex;
+    min-height: 194px;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.catalog-card__content h2 {
+    margin-bottom: 12px;
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+.catalog-card__content p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.catalog-card__content strong {
+    margin-top: auto;
+    font-size: 24px;
+}
+
+.catalog__load-more {
+    display: none;
+    width: 60px;
+    height: 60px;
+    margin: 40px auto 0;
+    border: 1px solid var(--dark-text);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--dark-text);
+    font-size: 26px;
+    cursor: pointer;
+    transform: rotate(95deg);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.catalog__load-more:hover {
+    background: var(--printed-text);
+}
+
+@media (max-width: 1100px) {
+    .catalog {
+        padding-top: 40px;
+    }
+
+    .catalog__heading {
+        max-width: 680px;
+        font-size: 48px;
+    }
+
+    .catalog__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    .catalog-card_hidden {
+        display: none;
+    }
+
+    .catalog__load-more {
+        display: block;
+    }
+}
+
+@media (max-width: 600px) {
+    .catalog {
+        padding: 40px 0 60px;
+    }
+
+    .catalog__heading {
+        font-size: 32px;
+    }
+
+    .catalog__tabs {
+        gap: 4px;
+        margin: 32px 0;
+    }
+
+    .catalog__tab {
+        padding-right: 10px;
+        font-size: 14px;
+    }
+
+    .catalog__grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
