@@ -12,7 +12,7 @@
         <div class="header__top-block">
             <div class="header__logo-container">
                 <a href="index.html" aria-label="Go to the main page">
-                    <img src="src/pictures/logo.png" alt="logo of the web-site with the sign Resource coffee shop">
+                    <img class="header__logo" src="src/pictures/logo.png" data-light-src="src/pictures/logo.png" data-dark-src="src/pictures/logo-dark.png" alt="logo of the web-site with the sign Resource coffee shop">
                 </a>
             </div>
             <nav class="header__nav">
@@ -24,7 +24,7 @@
                 </ul>
             </nav>
             <div class="header__interactive">
-                <button class="header__switch-theme" type="button" aria-label="Switch theme">
+                <button class="header__switch-theme" type="button" aria-label="Switch theme" aria-pressed="false">
                     <div class="header__img-container header__img-container_selected"><img src="src/pictures/Sun.svg" alt="an icon of the sun"></div>
                     <div class="header__img-container"><img src="src/pictures/Moon.svg" alt="an icon of the moon"></div>
                 </button>
@@ -199,5 +199,7 @@
             </ul>
         </div>
     </footer>
+
+    <script src="src/scripts/script.js"></script>
 </body>
 </html>
