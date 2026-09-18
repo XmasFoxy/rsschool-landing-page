@@ -210,6 +210,11 @@ ol {
     background: var(--printed-text);
 }
 
+html.dark-theme .header__menu-img img {
+    filter: brightness(0) saturate(100%) invert(92%) sepia(8%) saturate(441%)
+        hue-rotate(326deg) brightness(103%) contrast(89%);
+}
+
 .header__bottom-block {
     position: relative;
     display: flex;
@@ -713,6 +718,12 @@ ol {
 
     .header__menu-img::before {
         top: 20px;
+    }
+
+    html.dark-theme .header__menu::before,
+    html.dark-theme .header__menu::after,
+    html.dark-theme .header__menu-img::before {
+        background: var(--cream-text);
     }
 
     .header__menu::after {
