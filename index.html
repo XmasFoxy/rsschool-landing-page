@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" type="image/png" href="src/pictures/logo.png">
     <title>Resource</title>
 </head>
 <body>
     <header class="header">
         <div class="header__top-block">
             <div class="header__logo-container">
-                <img src="src/pictures/logo.jpg" alt="logo of the web-site with the sign Resource coffee shop">
+                <a href="index.html" aria-label="Go to the main page">
+                    <img src="src/pictures/logo.png" alt="logo of the web-site with the sign Resource coffee shop">
+                </a>
             </div>
             <nav class="header__nav">
                 <ul>
-                    <li>Favorite coffee</li>
-                    <li>About</li>
-                    <li>Mobile app</li>
-                    <li>Contact us</li>
+                    <li><a href="#favorite">Favorite coffee</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#mobile-app">Mobile app</a></li>
+                    <li><a href="#contact-us">Contact us</a></li>
                 </ul>
             </nav>
             <div class="header__interactive">
@@ -32,7 +35,7 @@
                 <div class="header__menu">
                     <p>Menu</p>
                     <div class="header__menu-img">
-                        <img src="src/pictures/coffee-cup.svg alt=a coffee cup icon">
+                        <img src="src/pictures/coffee-cup.svg" alt="a coffee cup icon">
                     </div>
                 </div>
             </div>
@@ -53,7 +56,7 @@
     </header>
 
     <main class="main">
-        <section main__favorite>
+        <section class="main__favorite" id="favorite">
             <h2 class="main__favorite-heading">Choose your <span class="main__paint">favorite</span> coffee</h2>
 
             <div class="main__favorite-container">
@@ -88,7 +91,7 @@
             </div>
         </section>
 
-        <section class="main__about">
+        <section class="main__about" id="about">
             <h2 class="main__about-heading">
                 Resource is <span class="main__printed">the perfect and cozy place</span> where you can 
                 enjoy a variety of hot beverages, relax, catch up with friends, or get some work done.
@@ -117,7 +120,7 @@
             </div>
         </section>
 
-        <section class="main__app">
+        <section class="main__app" id="mobile-app">
             <div class="main__app-content">
                 <h3 class="main__app-heading">
                     <span class="main__app-paint">Download</span> our app to start ordering
@@ -131,7 +134,7 @@
                 <div class="main__app-buttons">
                     <button class="main__app-button">
                         <div class="main__app-apple">
-                            <img src="src/pictures/Icon (1).svg" alt="an icon of App store">
+                            <img src="src/pictures/Icon.svg" alt="an icon of App store">
                         </div>
 
                         <div class="main__app-apple-text">
@@ -163,7 +166,10 @@
 
     <footer class="footer">
         <div class="footer__left">
-            <h3 class="footer__heading">Sip, Savor, Smile. It’s coffee time!</h3>
+            <h3 class="footer__heading">
+                <span class="footer__heading-line">Sip, Savor, Smile.</span>
+                <span class="footer__heading-line main__printed">It’s coffee time!</span>
+            </h3>
 
             <div class="footer__buttons">
                 <button class="footer-button">
@@ -180,32 +186,38 @@
             </div>
         </div>
 
-        <div class="footer__right">
+        <div class="footer__right" id="contact-us">
             <h4 class="footer__right-heading">Contact us</h4>
 
             <ul class="footer__contacts">
                 <li>
-                    <div class="footer__icon">
-                        <img src="src/pictures/pin-alt.svg" alt="an icon of geographic point">
-                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=8558+Green+Rd,+Los+Angeles" target="_blank" rel="noopener noreferrer">
+                        <div class="footer__icon">
+                            <img src="src/pictures/pin-alt.svg" alt="an icon of geographic point">
+                        </div>
 
-                    <p class="footer__text">8558 Green Rd.,  LA</p>
+                        <p class="footer__text">8558 Green Rd., LA</p>
+                    </a>
                 </li>
 
                 <li>
-                    <div class="footer__icon">
-                        <img src="src/pictures/phone.svg" alt="an icon of a phone">
-                    </div>
+                    <a href="tel:+16035550123">
+                        <div class="footer__icon">
+                            <img src="src/pictures/phone.svg" alt="an icon of a phone">
+                        </div>
 
-                    <p class="footer__text">+1 (603) 555-0123</p>
+                        <p class="footer__text">+1 (603) 555-0123</p>
+                    </a>
                 </li>
 
                 <li>
-                    <div class="footer__icon">
-                        <img src="src/pictures/clock.svg" alt="an icon of a clock">
-                    </div>
+                    <a href="https://calendar.google.com/calendar/u/0/r" target="_blank" rel="noopener noreferrer">
+                        <div class="footer__icon">
+                            <img src="src/pictures/clock.svg" alt="an icon of a clock">
+                        </div>
 
-                    <p class="footer__text">Mon\–Sat: 9:00\–23:00</p>
+                        <p class="footer__text">Mon–Sat: 9:00–23:00</p>
+                    </a>
                 </li>
             </ul>
         </div>
