@@ -12,7 +12,7 @@
         <div class="header__top-block">
             <div class="header__logo-container">
                 <a href="index.html" aria-label="Go to the main page">
-                    <img src="src/pictures/logo.png" alt="logo of the web-site with the sign Resource coffee shop">
+                    <img class="header__logo" src="src/pictures/logo.png" data-light-src="src/pictures/logo.png" data-dark-src="src/pictures/logo-dark.png" alt="logo of the web-site with the sign Resource coffee shop">
                 </a>
             </div>
             <nav class="header__nav">
@@ -24,7 +24,7 @@
                 </ul>
             </nav>
             <div class="header__interactive">
-                <button class="header__switch-theme">
+                <button class="header__switch-theme" type="button" aria-label="Switch theme" aria-pressed="false">
                     <div class="header__img-container header__img-container_selected">
                         <img src="src/pictures/Sun.svg" alt="an icon of the sun">
                     </div>
@@ -32,12 +32,12 @@
                         <img src="src/pictures/Moon.svg" alt="an icon of the moon">
                     </div>
                 </button>
-                <div class="header__menu">
+                <a class="header__menu" href="catalog.html" aria-label="Open menu">
                     <p>Menu</p>
                     <div class="header__menu-img">
                         <img src="src/pictures/coffee-cup.svg" alt="a coffee cup icon">
                     </div>
-                </div>
+                </a>
             </div>
         </div>
 
@@ -134,7 +134,7 @@
                 <div class="main__app-buttons">
                     <button class="main__app-button">
                         <div class="main__app-apple">
-                            <img src="src/pictures/Icon.svg" alt="an icon of App store">
+                            <img class="main__app-icon" src="src/pictures/Icon.svg" data-light-src="src/pictures/Icon.svg" data-dark-src="src/pictures/app-store-dark.png" alt="an icon of App store">
                         </div>
 
                         <div class="main__app-apple-text">
@@ -146,7 +146,7 @@
 
                     <button class="main__app-button">
                         <div class="main__app-apple">
-                            <img src="src/pictures/Icon (2).svg" alt="an icon of Play market">
+                            <img class="main__app-icon" src="src/pictures/Icon (2).svg" data-light-src="src/pictures/Icon (2).svg" data-dark-src="src/pictures/play-market-dark.png" alt="an icon of Play market">
                         </div>
 
                         <div class="main__app-apple-text">
@@ -222,5 +222,7 @@
             </ul>
         </div>
     </footer>
+
+    <script src="src/scripts/script.js"></script>
 </body>
 </html>
