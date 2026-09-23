@@ -184,6 +184,8 @@ ol {
     align-items: center;
     gap: 8px;
     padding: 0 4px;
+    border: 0;
+    background: transparent;
     color: var(--dark-text);
     font-weight: 600;
     transition: var(--theme-transition);
@@ -201,6 +203,11 @@ ol {
     place-items: center;
 }
 
+html.dark-theme .header__menu-img img {
+    filter: brightness(0) saturate(100%) invert(92%) sepia(8%) saturate(441%)
+        hue-rotate(326deg) brightness(103%) contrast(89%);
+}
+
 .dark-theme .header__switch-theme {
     background: rgba(64, 63, 61, 0.4);
     border-color: rgba(225, 212, 201, 0.8);
@@ -208,11 +215,6 @@ ol {
 
 .dark-theme .header__img-container_selected {
     background: var(--printed-text);
-}
-
-html.dark-theme .header__menu-img img {
-    filter: brightness(0) saturate(100%) invert(92%) sepia(8%) saturate(441%)
-        hue-rotate(326deg) brightness(103%) contrast(89%);
 }
 
 .header__bottom-block {
@@ -337,6 +339,12 @@ html.dark-theme .header__menu-img img {
     max-width: 480px;
     text-align: center;
     margin: 0 auto;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.main__favorite-content_switching {
+    opacity: 0;
+    transform: translateX(12px);
 }
 
 .main__favorite-img {
@@ -436,6 +444,13 @@ html.dark-theme .header__menu-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.main__big-img:hover img,
+.main__little-img:hover img {
+    transform: scale(1.04);
+    filter: brightness(1.08);
 }
 
 .main__app {
@@ -594,11 +609,7 @@ html.dark-theme .header__menu-img img {
 
 .footer__contacts li {
     cursor: pointer;
-    transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.footer__contacts li:hover {
-    transform: translateX(4px);
+    transition: color 0.2s ease;
 }
 
 .footer__contacts a {
@@ -606,6 +617,17 @@ html.dark-theme .header__menu-img img {
     align-items: center;
     gap: 12px;
     cursor: pointer;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.footer__contacts li:hover a {
+    color: var(--printed-text);
+}
+
+.footer__contacts li:hover .footer__text {
+    color: var(--printed-text);
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 .footer__icon {
@@ -667,7 +689,7 @@ html.dark-theme .header__menu-img img {
     }
 }
 
-@media (max-width: 840px) {
+@media (max-width: 768px) {
     body {
         padding: 16px 16px 32px;
     }
@@ -678,7 +700,55 @@ html.dark-theme .header__menu-img img {
     }
 
     .header__nav {
-        display: none;
+        display: flex;
+        position: fixed;
+        z-index: 5;
+        top: 76px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        min-height: 0;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+        border-radius: 0;
+        background: var(--light-background);
+        box-shadow: none;
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+        transform: translateY(-16px);
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    }
+
+    .menu-open .header__nav {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .header__nav ul {
+        width: 100%;
+        flex-direction: column;
+        gap: 32px;
+        text-align: center;
+    }
+
+    .menu-open {
+        overflow: hidden;
+    }
+
+    .menu-open .header {
+        position: relative;
+        z-index: 6;
+    }
+
+    .menu-open .header__top-block {
+        position: relative;
+        z-index: 8;
+        margin-bottom: 0;
+        background: var(--light-background);
     }
 
     .header__interactive {
@@ -686,6 +756,8 @@ html.dark-theme .header__menu-img img {
     }
 
     .header__menu {
+        position: relative;
+        z-index: 7;
         width: 44px;
         height: 44px;
         padding: 0;
@@ -720,14 +792,22 @@ html.dark-theme .header__menu-img img {
         top: 20px;
     }
 
-    html.dark-theme .header__menu::before,
-    html.dark-theme .header__menu::after,
-    html.dark-theme .header__menu-img::before {
-        background: var(--cream-text);
-    }
-
     .header__menu::after {
         top: 26px;
+    }
+
+    .menu-open .header__menu::before {
+        top: 20px;
+        transform: rotate(45deg);
+    }
+
+    .menu-open .header__menu::after {
+        top: 20px;
+        transform: rotate(-45deg);
+    }
+
+    .menu-open .header__menu-img::before {
+        opacity: 0;
     }
 
     .header__menu-img {

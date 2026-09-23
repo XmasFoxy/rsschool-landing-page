@@ -28,11 +28,12 @@
                     <div class="header__img-container header__img-container_selected"><img src="src/pictures/Sun.svg" alt="an icon of the sun"></div>
                     <div class="header__img-container"><img src="src/pictures/Moon.svg" alt="an icon of the moon"></div>
                 </button>
-                <div class="header__menu header__menu_selected" aria-label="Menu">
+                <button class="header__menu header__menu_selected" type="button" aria-label="Open menu" aria-expanded="false">
                     <p>Menu</p>
                     <div class="header__menu-img">
                         <img src="src/pictures/coffee-cup.svg" alt="a coffee cup icon">
                     </div>
+                </button>
                 </div>
             </div>
         </div>
@@ -66,118 +67,8 @@
                 </span>
             </button>
         </div>
-        <section class="catalog__grid" aria-label="Coffee menu">
-            <article class="catalog-card">
-                <div class="catalog-card__image">
-                    <img src="src/pictures/coffee-1.jpg" alt="Irish coffee">
-                </div>
-
-                <div class="catalog-card__content">
-                    <h2>Irish coffee</h2>
-
-                    <p>Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
-
-                    <strong>$7.00</strong>
-                </div>
-            </article>
-            <article class="catalog-card">
-                <div class="catalog-card__image">
-                    <img src="src/pictures/coffee-2.jpg" alt="Kahlua coffee">
-                </div>
-
-                <div class="catalog-card__content">
-                    <h2>Kahlua coffee</h2>
-
-                    <p>Classic coffee with Kahlua liqueur and whipped cream</p>
-
-                    <strong>$7.00</strong>
-                </div>
-            </article>
-
-            <article class="catalog-card">
-                <div class="catalog-card__image">
-                    <img src="src/pictures/coffee-3.jpg" alt="Honey raf">
-                </div>
-
-                <div class="catalog-card__content">
-                    <h2>Honey raf</h2>
-
-                    <p>Espresso with steamed milk, honey, and fragrant cinnamon</p>
-
-                    <strong>$5.50</strong>
-                </div>
-            </article>
-
-            <article class="catalog-card">
-                <div class="catalog-card__image">
-                    <img src="src/pictures/coffee-4.jpg" alt="Ice cappuccino">
-                </div>
-
-                <div class="catalog-card__content">
-                    <h2>Ice cappuccino</h2>
-
-                    <p>Rich espresso with milk and ice, topped with soft milk foam</p>
-
-                    <strong>$5.00</strong>
-                </div>
-            </article>
-
-            <article class="catalog-card catalog-card_hidden">
-                <div class="catalog-card__image">
-                    <img src="src/pictures/coffee-5.jpg" alt="Espresso">
-                </div>
-
-                <div class="catalog-card__content">
-                    <h2>Espresso</h2>
-
-                    <p>Classic espresso with a rich flavor and lasting crema</p>
-
-                    <strong>$4.50</strong>
-                </div>
-            </article>
-
-            <article class="catalog-card catalog-card_hidden">
-                <div class="catalog-card__image">
-                    <img src="src/pictures/coffee-6.jpg" alt="Latte">
-                </div>
-
-                <div class="catalog-card__content">
-                    <h2>Latte</h2>
-
-                    <p>Espresso with steamed milk and a light layer of foam</p>
-
-                    <strong>$5.50</strong>
-                </div>
-            </article>
-
-            <article class="catalog-card catalog-card_hidden">
-                <div class="catalog-card__image">
-                    <img src="src/pictures/coffee-7.jpg" alt="Coffee with cream">
-                </div>
-
-                <div class="catalog-card__content">
-                    <h2>Coffee with cream</h2>
-
-                    <p>Freshly brewed coffee finished with silky whipped cream</p>
-
-                    <strong>$4.50</strong>
-                </div>
-            </article>
-
-            <article class="catalog-card catalog-card_hidden">
-                <div class="catalog-card__image">
-                    <img src="src/pictures/coffee-8.jpg" alt="Cappuccino">
-                </div>
-
-                <div class="catalog-card__content">
-                    <h2>Cappuccino</h2>
-
-                    <p>Espresso with steamed milk and a generous layer of foam</p>
-
-                    <strong>$5.00</strong>
-                </div>
-            </article>
-        </section>
+        <section class="catalog__grid" aria-label="Coffee menu"></section>
+        <div class="catalog__modal-root"></div>
         <button class="catalog__load-more" type="button" aria-label="Load more coffee items">↻</button>
     </main>
 
@@ -200,6 +91,6 @@
         </div>
     </footer>
 
-    <script src="src/scripts/script.js"></script>
+    <script type="module" src="src/scripts/main.js"></script>
 </body>
 </html>
